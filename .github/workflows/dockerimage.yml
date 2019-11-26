@@ -14,14 +14,10 @@ jobs:
       uses: lj
       with:
         # Username used to login docker registry
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: jing.ljljlj
         # Password used to login docker registry
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: Hello0616
         # Docker registry server address
         registry: registry.cn-hangzhou.aliyuncs.com
         # Docker file used to build image
         repository: namespace3/actions
-
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
