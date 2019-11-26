@@ -13,7 +13,7 @@ jobs:
       uses: whoan/docker-build-with-cache-action@v2
       with:
         # Docker's registry user
-        username: lj
+        username: jing.ljljlj
         # Docker's registry password
         password: Hello0616
         # (Optional) Docker registry (default: Docker Hub's registry)
