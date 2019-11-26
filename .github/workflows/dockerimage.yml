@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Publish Docker Action
+      uses: lj
+      with:
+        # Username used to login docker registry
+        username: ${{ secrets.DOCKER_USERNAME }}
+        # Password used to login docker registry
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        # Docker registry server address
+        registry: registry.cn-hangzhou.aliyuncs.com
+        # Docker file used to build image
+        repository: namespace3/actions
+
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
