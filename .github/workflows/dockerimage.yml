@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/namespace3/actions
+
     - name: Build docker images using cache
       uses: whoan/docker-build-with-cache-action@v2
       with:
@@ -21,7 +25,3 @@ jobs:
         # Name of the image to build
         image_name: namespace3/actions
         # (Optional) Tag of the image to build (default: latest)
-
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
