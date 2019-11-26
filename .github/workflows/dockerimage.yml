@@ -14,10 +14,9 @@ jobs:
       uses: lj
       with:
         # Username used to login docker registry
-        username: jing.ljljlj
+        username: lj
         # Password used to login docker registry
         password: Hello0616
         # Docker registry server address
-        registry: registry.cn-hangzhou.aliyuncs.com
-        # Docker file used to build image
-        repository: namespace3/actions
+        registry: 
+
