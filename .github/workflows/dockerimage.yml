@@ -25,4 +25,4 @@ jobs:
         # Name of the image to build
         image_name: namespace3/actions
         # (Optional) Tag of the image to build (default: latest)
-        push_image_and_stages: false
+        push_image_and_stages: true
