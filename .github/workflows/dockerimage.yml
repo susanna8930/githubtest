@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/namespace3/actions
+
 
     - name: Build docker images using cache
       uses: whoan/docker-build-with-cache-action@v2
